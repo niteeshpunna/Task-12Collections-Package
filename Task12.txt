@@ -1,0 +1,201 @@
+Task Description:
+1. Create a package named "com.example.hr" that includes an Employee class.
+The Employee class should have the following fields:
+name - a string that represents the employee's name.
+id - an integer that represents the employee's ID number.
+salary - a double that represents the employee's salary.
+a. The Employee class should also have the following methods:
+b. public void printName) - a method that prints the employee's name
+to the console.
+C. public void printSalary() -a method that prints the employee's salary
+to the console.
+
+d. Create a second package named "com.example.hrtest" that includes a class named "EmployeeTest". 
+The "EmployeeTest" class should include a main method that creates an instance of the "Employee"
+class, sets the employee's name, ID number, and salary, and calls its
+methods to print the employee's name and salary to the console.
+e. In your main method, use the "import" statement to import the
+"com.example.hr" package and access the "Employee" class.
+f. Compile and run your program to verify that it successfully creates
+an instance of the "Employee" class and calls its methods to print the
+employee's name and salary to the console.
+
+Solution:
+
+package com.example.hr;
+
+public class Employee {
+	private String name;
+    private int id;
+    private double salary;
+    // Constructor
+    public Employee() {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+    }
+    
+ // Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+	public void setId(int id) {
+		this.id = id;
+	}
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+    
+    
+    // Method to print the employee's name
+    public void printName() {
+        System.out.println("Employee Name: " + this.name);
+    }
+    
+    	// Method to print the employee's salary
+    public void printSalary() {
+        System.out.println("Employee Salary: " + this.salary);
+    }
+}
+
+Second Package Code:
+
+package com.example.hrtest;
+
+import com.example.hr.Employee;
+
+public class EmployeeTest {
+	public static void main(String[] args) {
+        // Creating an instance of the Employee class
+        Employee employee = new Employee();
+        
+     // Set the employee's name, ID, and salary
+        employee.setName("Punna Niteesh Kumar");
+        employee.setId(500035);
+        employee.setSalary(60000.0);
+
+        // Call the methods to print the employee's name and salary
+        employee.printName();
+        employee.printSalary();
+
+	}
+}
+
+
+Output: 
+Employee Name: Punna Niteesh Kumar
+Employee Salary: 60000.0
+
+------------------------------------------------------------------------------------------------------------
+
+2. Write a Java program to create an ArrayList of strings and then remove all the elements from the ArrayList.
+
+import java.util.ArrayList;
+					// we import the ArrayList class from the java.util package. 
+public class Task11prob2 {
+	public static void main(String[] args) {
+					// Create an ArrayList of strings
+        ArrayList<String> stringList = new ArrayList<>();
+
+					// Adding elements to the ArrayList using the add() method. 
+        stringList.add("Apple");
+        stringList.add("Banana");
+        stringList.add("Orange");
+        stringList.add("Mango");
+
+        System.out.println("ArrayList before removing elements: " + stringList);
+
+					// Remove all elements from the ArrayList using clear() method
+        stringList.clear();
+
+        System.out.println("ArrayList after removing elements: " + stringList);
+    }
+}
+Output:
+ArrayList before removing elements: [Apple, Banana, Orange, Mango]
+ArrayList after removing elements: []
+------------------------------------------------------------------------------------------------------------
+
+
+3. Write a Java program to create a TreeMap of employee IDs and names.
+Then, print out the names of all the employees in alphabetical order.
+
+package com.example.hr;
+
+import java.util.Map;
+import java.util.TreeMap;
+		//  importing the Map and TreeMap classes from the java.util package.
+public class TreeMapExample {
+
+	public static void main(String[] args) {
+		
+		// Create a TreeMap of employee IDs and names
+        TreeMap<Integer, String> employeeMap = new TreeMap<>();
+
+        // Add employee IDs and names to the TreeMap
+        employeeMap.put(103, "PUNNA");
+        employeeMap.put(102, "NITEESH");
+        employeeMap.put(101, "KUMAR");
+        employeeMap.put(104, "ABCD");
+
+        System.out.println("Names of employees in alphabetical order:");
+        for (Map.Entry<Integer, String> entry : employeeMap.entrySet()) {
+            System.out.println(entry.getValue());
+        }
+	}
+}
+Output:
+KUMAR
+NITEESH
+PUNNA
+ABCD
+
+Iterating over the employeeMap using a for-each loop and entrySet() method. 
+We retrieve the employee names using getValue() and print them out in alphabetical order.
+
+------------------------------------------------------------------------------------------------------------
+
+4. Write a program to convert List to Array
+
+package com.example.hr;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class ListToArrayExample {
+
+	public static void main(String[] args) {
+		// Create a List of integers
+        List<Integer> numberList = new ArrayList<>();
+        numberList.add(10);
+        numberList.add(20);
+        numberList.add(30);
+        numberList.add(40);
+        numberList.add(50);
+
+        // Convert List to Array
+        Integer[] numberArray = numberList.toArray(new Integer[0]);
+
+        // Print the Array
+        System.out.println("Array: " + Arrays.toString(numberArray));
+    }
+}
+
+Output:
+Array: [10, 20, 30, 40, 50]
+
+
